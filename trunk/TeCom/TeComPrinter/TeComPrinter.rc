@@ -1,0 +1,139 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Portuguese (Brazil) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PTB)
+#ifdef _WIN32
+LANGUAGE LANG_PORTUGUESE, SUBLANG_PORTUGUESE_BRAZILIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""TeComPrinter.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "Elaborado por Rui Maurício Gregório"
+            VALUE "CompanyName", "Funcate - Fundação de Ciência, Aplicações e Tecnologia Espaciais"
+            VALUE "FileDescription", "Terra Printer"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "TeComPrinter.dll"
+            VALUE "LegalCopyright", "(c) <Funcate - Fundação de Ciência, Aplicações e Tecnologia Espaciais>.  All rights reserved."
+            VALUE "OriginalFilename", "TeComPrinter.dll"
+            VALUE "ProductName", "Terra Printer"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_TECOMPRINTER        REGISTRY                "TeComPrinter.rgs"
+IDR_TEPRINTER           REGISTRY                "TePrinter.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TEPRINTER           BITMAP                  "TePrinter.bmp"
+IDB_DATABASEI			BITMAP					"databaseImage.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_ZOOM                CURSOR                  "zoom.cur"
+IDC_MOUSEHAND           CURSOR                  "mouseHand.cur"
+IDC_ZOOMOUT             CURSOR                  "zoomOut.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "TeComPrinter"
+END
+
+#endif    // Portuguese (Brazil) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "TeComPrinter.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
