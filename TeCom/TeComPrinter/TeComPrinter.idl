@@ -1,0 +1,135 @@
+// TeComPrinter.idl : IDL source for TeComPrinter
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (TeComPrinter.tlb) and marshalling code.
+
+#include "olectl.h"
+#include <TdkLayoutTypes.h>
+#include <TdkObjectTypes.h>
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(3D1C2BB1-6D87-42CA-A681-BBA7697031F8),
+	dual,
+	nonextensible,
+	helpstring("ITePrinter Interface"),
+	pointer_default(unique)
+]
+interface ITePrinter : IDispatch{
+	[propput, bindable, requestedit, id(DISPID_BACKCOLOR)]
+	HRESULT BackColor([in]OLE_COLOR clr);
+	[propget, bindable, requestedit, id(DISPID_BACKCOLOR)]
+	HRESULT BackColor([out,retval]OLE_COLOR* pclr);
+	[id(1), helpstring("method execute")] HRESULT execute(void);
+	[propget, id(2), helpstring("property orientation")] HRESULT orientation([out, retval] Orientation* pVal);
+	[propput, id(2), helpstring("property orientation")] HRESULT orientation([in] Orientation newVal);
+	[propget, id(3), helpstring("property paperSize")] HRESULT paperSize([out, retval] PaperSize* pVal);
+	[propput, id(3), helpstring("property paperSize")] HRESULT paperSize([in] PaperSize newVal);
+	[id(4), helpstring("method addText")] HRESULT addText([in,defaultvalue("")] BSTR textValue);
+	[id(5), helpstring("method align")] HRESULT setAlign([in] TdkAlignment value);
+	[id(6), helpstring("method printExecute")] HRESULT printExecute([in] BSTR printTitle, [out,retval] VARIANT_BOOL* result);
+	[id(7), helpstring("method addImage")] HRESULT addImage([in] BSTR fileName);
+	[propget, id(8), helpstring("property connection")] HRESULT connection([out, retval] VARIANT* pVal);
+	[propput, id(8), helpstring("property connection")] HRESULT connection([in] VARIANT newVal);
+	[propget, id(9), helpstring("property provider")] HRESULT provider([out, retval] connectionType* pVal);
+	[propput, id(9), helpstring("property provider")] HRESULT provider([in] connectionType newVal);
+	[id(10), helpstring("method addMap")] HRESULT addMap([in] BSTR viewName, [in,defaultvalue("")] BSTR userName,[in,defaultvalue(3.4E37)] DOUBLE x1,[in,defaultvalue(3.4E37)] DOUBLE y1, [in,defaultvalue(-3.4E37)] DOUBLE x2,[in,defaultvalue(-3.4E37)] DOUBLE y2);
+	[id(11), helpstring("method getLayoutObjectCount")] HRESULT getLayoutObjectCount([out,retval] LONG* result);
+	[id(12), helpstring("method getLayoutObjectName")] HRESULT getLayoutObjectName([in] LONG index, [out,retval] BSTR* result);
+	[id(13), helpstring("method getLayoutObjectPropertiesCount")] HRESULT getLayoutObjectPropertiesCount([in] BSTR objectName, [out,retval] LONG* result);
+	[id(14), helpstring("method getLayoutObjectPropertyName")] HRESULT getLayoutObjectPropertyName([in] BSTR objectName, [in] LONG index, [out,retval] BSTR* result);
+	[id(15), helpstring("method getLayoutObjectPropertyValue")] HRESULT getLayoutObjectPropertyValue([in] BSTR objectName, [in] LONG index, [out,retval] VARIANT* result);
+	[id(16), helpstring("method setObjectPropertyValue")] HRESULT setObjectPropertyValue([in] BSTR objName, [in] LONG index, [in] VARIANT value);
+	[id(17), helpstring("method getLayoutSelectObjectCount")] HRESULT getLayoutSelectObjectCount([out,retval] LONG* result);
+	[id(18), helpstring("method getLayoutSelectObjectName")] HRESULT getLayoutSelectObjectName([in] LONG index, [out,retval] BSTR* result);
+	[id(19), helpstring("method setObjectPropertyValueByName")] HRESULT setObjectPropertyValueByName([in] BSTR objName, [in] BSTR propertyName, [in] VARIANT value);
+	[id(20), helpstring("method setMapMode")] HRESULT setMapMode([in] MapMode mode);
+	[id(21), helpstring("method sendObjectToBack")] HRESULT sendObjectToBack(void);
+	[id(22), helpstring("method bringObjectToFront")] HRESULT bringObjectToFront(void);
+	[id(23), helpstring("method addRectangle")] HRESULT addRectangle(void);
+	[id(24), helpstring("method addEllipse")] HRESULT addEllipse(void);
+	[id(25), helpstring("method addLine")] HRESULT addLine(void);
+	[id(26), helpstring("method stopProcess")] HRESULT stopProcess(void);
+	[id(27), helpstring("method addScale")] HRESULT addScale(void);
+	[propget, id(28), helpstring("property leftMargin")] HRESULT leftMargin([out, retval] DOUBLE* pVal);
+	[propput, id(28), helpstring("property leftMargin")] HRESULT leftMargin([in] DOUBLE newVal);
+	[propget, id(29), helpstring("property topMargin")] HRESULT topMargin([out, retval] DOUBLE* pVal);
+	[propput, id(29), helpstring("property topMargin")] HRESULT topMargin([in] DOUBLE newVal);
+	[propget, id(30), helpstring("property bottomMargin")] HRESULT bottomMargin([out, retval] DOUBLE* pVal);
+	[propput, id(30), helpstring("property bottomMargin")] HRESULT bottomMargin([in] DOUBLE newVal);
+	[propget, id(31), helpstring("property rightMargin")] HRESULT rightMargin([out, retval] DOUBLE* pVal);
+	[propput, id(31), helpstring("property rightMargin")] HRESULT rightMargin([in] DOUBLE newVal);
+	[id(32), helpstring("method selectObject")] HRESULT selectObject([in] BSTR objectName, [out,retval] VARIANT_BOOL* result);
+	[id(33), helpstring("method addNorth")] HRESULT addNorth(void);
+	[id(34), helpstring("method hrzDisplacement")] HRESULT hrzDisplacement([in] DOUBLE value);
+	[id(35), helpstring("method vrtDisplacement")] HRESULT vrtDisplacement([in] DOUBLE value);
+	[id(36), helpstring("method recompose")] HRESULT recompose(void);
+	[propget, id(37), helpstring("property wClientArea")] HRESULT wClientArea([out, retval] LONG* pVal);
+	[propget, id(38), helpstring("property hClientArea")] HRESULT hClientArea([out, retval] LONG* pVal);
+	[propget, id(39), helpstring("property zoomFactor")] HRESULT zoomFactor([out, retval] DOUBLE* pVal);
+	[propput, id(39), helpstring("property zoomFactor")] HRESULT zoomFactor([in] DOUBLE newVal);
+	[propget, id(40), helpstring("property centerVisibleAreaX")] HRESULT centerVisibleAreaX([out, retval] LONG* pVal);
+	[propget, id(41), helpstring("property centerVisibleAreaY")] HRESULT centerVisibleAreaY([out, retval] LONG* pVal);
+	[id(42), helpstring("method removeSelectedItems")] HRESULT removeSelectedItems(void);
+	[id(43), helpstring("method getLayoutObjectType")] HRESULT getLayoutObjectType([in] BSTR objectName, [out,retval] objectType* result);
+	[id(44), helpstring("method setLayoutMode")] HRESULT setLayoutMode([in] layoutMode mode);
+	[id(45), helpstring("method getLayoutPropertyType")] HRESULT getLayoutPropertyType([in] BSTR objectName, [in] BSTR propertyName, [out,retval] propertyType* result);
+	[id(46), helpstring("method forceFullUpdate")] HRESULT forceFullUpdate(void);
+	[id(47), helpstring("method addDatabase")] HRESULT addDatabase(void);
+	[id(48), helpstring("method save")] HRESULT save([in] BSTR fileName, [out,retval] VARIANT_BOOL* result);
+	[id(49), helpstring("method open")] HRESULT open([in] BSTR fileName, [out,retval] VARIANT_BOOL* result);
+	[id(50), helpstring("method newEmptyPage")] HRESULT newEmptyPage(void);
+	[id(51), helpstring("method addMText")] HRESULT addMText([in] BSTR textValue);
+	[id(52), helpstring("method addPoliticalDivision")] HRESULT addPoliticalDivision(void);
+	[id(53), helpstring("method copyToClipboard")] HRESULT copyToClipboard(void);
+	[id(54), helpstring("method pasteFromClipboard")] HRESULT pasteFromClipboard(void);
+	[id(55), helpstring("method clipboardIsEmpty")] HRESULT clipboardIsEmpty([out,retval] VARIANT_BOOL* result);
+	[id(56), helpstring("method addBarcode")] HRESULT addBarcode([in] BSTR textValue);
+	[id(57), helpstring("method addVLineControl")] HRESULT addVLineControl(void);
+	[id(58), helpstring("method addHLineControl")] HRESULT addHLineControl(void);
+};
+
+[
+	uuid(F141AAE7-BD4C-4793-88DB-10FE8CBA518C), 
+	version(1.0),
+	helpstring("TeComPrinter 1.0 Type Library")
+]
+library TeComPrinterLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(53CF6133-FC16-41A2-9F6B-EB9EA847BE14),
+		helpstring("_ITePrinterEvents Interface")
+	]
+	dispinterface _ITePrinterEvents
+	{
+		properties:
+		methods:
+			[id(1), helpstring("method mouseMove")] HRESULT mouseMove([in] DOUBLE x, [in] DOUBLE y);
+			[id(2), helpstring("method mouseDown")] HRESULT mouseDown([in] LONG button, [in] DOUBLE x, [in] DOUBLE y);
+			[id(3), helpstring("method mouseUp")] HRESULT mouseUp([in] LONG button, [in] DOUBLE x, [in] DOUBLE y);
+			[id(4), helpstring("method processEvent")] HRESULT processEvent([in] LONG maxValue, [in] LONG value);
+			[id(5), helpstring("method endProcess")] HRESULT endProcess([in] VARIANT_BOOL partial);
+			[id(6), helpstring("method insertObjectEvent")] HRESULT insertObjectEvent(void);
+			[id(7), helpstring("method selectObject")] HRESULT selectObject([in] VARIANT_BOOL selItem);
+			[id(8), helpstring("method panEvent")] HRESULT panEvent([in] DOUBLE dx, [in] DOUBLE dy);
+			[id(9), helpstring("method zoomAreaEvent")] HRESULT zoomAreaEvent(void);
+			[id(10), helpstring("method zoomOutEvent")] HRESULT zoomOutEvent(void);
+			[id(11), helpstring("method atlMouseUp")] HRESULT atlMouseUp([in]LONG button,[in] LONG x, [in] LONG y);
+			[id(12), helpstring("method atlMouseDown")]	HRESULT atlMouseDown([in]LONG button,[in] LONG x, [in] LONG y);
+			[id(13), helpstring("method atlMouseMove")]	HRESULT atlMouseMove([in] LONG x, [in] LONG y);
+	};
+	[
+		uuid(02F2F0AF-E832-46CA-9D75-A312FB2D8837),
+		control,
+		helpstring("TePrinter Class")
+	]
+	coclass TePrinter
+	{
+		[default] interface ITePrinter;
+		[default, source] dispinterface _ITePrinterEvents;
+	};
+};
