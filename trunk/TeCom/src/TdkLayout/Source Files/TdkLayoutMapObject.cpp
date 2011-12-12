@@ -116,6 +116,16 @@ void TdkLayoutMapObject::draw()
 			restartConnection();
 	}
 
+	if(_database)
+	{
+		std::string dbVersion;
+		_database->loadVersionStamp(dbVersion);
+		if( (dbVersion != "4.0.0") && (dbVersion != "4.1.0") && (dbVersion != "4.1.1"))
+		{
+			drawErrorLine();
+			return ;
+		}
+	}
 
 	if( (_lastVieName!=_viewName->getValue()) && (_database != 0) )
 	{
@@ -137,6 +147,8 @@ void TdkLayoutMapObject::draw()
 		drawErrorLine();
 		return ;
 	}
+
+	
 
 	if(_mapScale)	
 	{	
