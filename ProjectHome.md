@@ -1,0 +1,2 @@
+TerraPrinter is a ActiveX component that allows multiple developers to make their own application to plot spatial data from the TerraLib database.
+This component is developed in C++ using Visual Studio 2005. You can use this component in several languages like VB, C#, Delphi and other
